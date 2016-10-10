@@ -6,11 +6,11 @@ const Sass = require('broccoli-sass-source-maps');
 const LiveReload = require('broccoli-inject-livereload');
 const Autoprefixer = require('broccoli-autoprefixer');
 const CssOptimizer = require('broccoli-csso');
-const Funnel = require('broccoli-funnel');
 const Babel = require('broccoli-babel-transpiler');
 const mv = require('broccoli-stew').mv;
 const rm = require('broccoli-stew').rm;
 const browserify = require('broccoli-browserify-cache');
+const vueify = require('vueify');
 
 let pubFiles = new LiveReload('public');
 
@@ -29,6 +29,9 @@ const babelScript = new Babel(appNoSass);
 const appScript = browserify(babelScript, {
   entries: ['./index'],
   outputFile: 'app.js',
+  config(brow) {
+    brow.transform(vueify);
+  },
 });
 
 const compiledSass = new Sass(stylePaths, 'app.scss', 'app.css', {});
@@ -44,6 +47,9 @@ if (process.env.EMBER_ENV === 'test') {
   const testJs = browserify(testTree, {
     entries: ['./tests/index-test'],
     outputFile: 'tests.js',
+    config(brow) {
+      brow.transform(vueify);
+    },
   });
 
   module.exports = new Merge([pubFiles, styles, appScript, testJs]);
