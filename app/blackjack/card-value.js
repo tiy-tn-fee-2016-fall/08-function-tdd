@@ -10,8 +10,7 @@ export default function (cardName) {
   }
   if (cardName === 'ace') {
     return 11;
-  }
-  else {
+  } else {
     return parseInt(cardName);
   }
 }
