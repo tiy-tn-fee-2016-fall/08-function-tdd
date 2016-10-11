@@ -23,3 +23,12 @@ import './learning-arrays/02-deep-equal-test';
 
 // Runs all code in `./learning-arrays/03-array-sum-test.js`
 import './learning-arrays/03-array-sum-test';
+
+// Runs all code in `./learning-arrays/01-alive-neighbors-test.js`
+import './conway/01-alive-neighbors-test';
+
+// Runs all code in `./learning-arrays/02-should-stay-alive-test.js`
+import './conway/02-should-stay-alive-test';
+
+// Runs all code in `./learning-arrays/02-should-stay-alive-test.js`
+import './conway/03-should-revive-test';
