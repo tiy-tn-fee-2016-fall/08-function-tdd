@@ -14,3 +14,12 @@ import './blackjack/04-should-hit-test';
 
 // Runs all code in `./blackjack/05-select-action-test.js`
 import './blackjack/05-select-action-test';
+
+// Runs all code in `./learning-arrays/01-same-first-test.js`
+import './learning-arrays/01-same-first-test';
+
+// Runs all code in `./learning-arrays/02-deep-equal-test.js`
+import './learning-arrays/02-deep-equal-test';
+
+// Runs all code in `./learning-arrays/03-array-sum-test.js`
+import './learning-arrays/03-array-sum-test';
