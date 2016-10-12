@@ -3,12 +3,12 @@ import shouldHit from './should-hit';
 
 export default function (card1, card2) {
   if (shouldHit(card1, card2)) {
-    return hit;
+    return 'hit';
   }
   if (shouldSplit(card1, card2)) {
-    return split;
+    return 'split';
   }
   else {
-    return stay;
+    return 'stay';
   }
 }
