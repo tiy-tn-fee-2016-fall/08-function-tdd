@@ -1,13 +1,13 @@
 import aliveNeighbors from './alive-neighbors';
 
 export default function shouldStayAlive(neighbors) {
-  let alive = 0;
-
-  for (let i = 0; i < neighbors.length; i++) {
-    if (neighbors[i] === true) {
-      alive++;
-    }
+  if (aliveNeighbors(neighbors) < 2) {
+    return false;
   }
 
-  return alive;
+  if (aliveNeighbors(neighbors) >= 4) {
+    return false;
+  }
+
+  return true;
 }
